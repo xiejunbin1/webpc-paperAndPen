@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="165px" viewBox="0 0 176 165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>转换失败</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.5.2.7任务-资源+心得转换失败" transform="translate(-873.000000, -321.000000)">
+            <g id="编组-5" transform="translate(873.000000, 321.000000)">
+                <g id="编组-3">
+                    <polygon id="矩形" fill="#E7E8EB" points="0 0 53.132108 0 53.132108 12.7817036 67 12.7817036 67 87 0 87"></polygon>
+                    <rect id="矩形" fill="#CBCED9" x="13" y="25" width="41" height="7" rx="3.5"></rect>
+                    <rect id="矩形备份" fill="#CBCED9" x="13" y="40" width="41" height="7" rx="3.5"></rect>
+                    <rect id="矩形备份-2" fill="#CBCED9" x="13" y="55" width="24" height="7" rx="3.5"></rect>
+                </g>
+                <g id="编组-4" transform="translate(109.000000, 78.000000)">
+                    <polygon id="矩形备份-3" fill="#E7E8EB" points="0 0 53.132108 0 53.132108 12.7817036 67 12.7817036 67 87 0 87"></polygon>
+                    <g id="编组-2" transform="translate(14.000000, 22.000000)">
+                        <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="40" height="47"></rect>
+                        <rect id="矩形" fill="#22AD7E" x="0" y="0" width="40" height="12"></rect>
+                        <rect id="矩形" fill="#F6F6F6" x="17" y="12" width="5" height="35"></rect>
+                        <rect id="矩形" fill="#F6F6F6" x="0" y="26" width="40" height="6"></rect>
+                    </g>
+                </g>
+                <polyline id="路径" stroke="#D1D1D1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" points="90.2940193 12.8469594 79.4689534 22.8469594 90.2940193 32.8469594"></polyline>
+                <polyline id="路径备份" stroke="#D1D1D1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(95.881486, 131.846959) scale(-1, 1) translate(-95.881486, -131.846959) " points="101.294019 121.846959 90.4689534 131.846959 101.294019 141.846959"></polyline>
+                <path d="M79.4689534,22.8469594 L126.5,22.8469594 C135.336556,22.8469594 142.5,30.0104034 142.5,38.8469594 L142.5,59.5 L142.5,59.5" id="路径-5" stroke="#D1D1D1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M33.4689534,94.8469594 L80.5,94.8469594 C89.336556,94.8469594 96.5,102.010403 96.5,110.846959 L96.5,131.5 L96.5,131.5" id="路径-5备份" stroke="#D1D1D1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(64.984477, 113.173480) scale(-1, -1) translate(-64.984477, -113.173480) "></path>
+                <g id="reload备份" transform="translate(37.000000, 113.000000)">
+                    <circle id="椭圆形" fill="#FC5433" cx="15" cy="15" r="15"></circle>
+                    <g filter="url(#filter-1)" id="编组" stroke-linecap="round">
+                        <g transform="translate(15.000000, 15.353553) rotate(-315.000000) translate(-15.000000, -15.353553) translate(6.000000, 6.353553)">
+                            <line x1="0" y1="8.75" x2="17.5" y2="8.75" id="直线-13" stroke="#FFFFFF" stroke-width="3"></line>
+                            <line x1="8.75" y1="0" x2="8.75" y2="17.5" id="直线-13" stroke="#FFFFFF" stroke-width="3"></line>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

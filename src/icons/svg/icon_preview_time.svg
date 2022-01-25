@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="24px" viewBox="0 0 25 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/课程/时间</title>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.5.1课程-任务" transform="translate(-889.000000, -1095.000000)" stroke-width="2">
+            <g id="组件/任务pc备份-3" transform="translate(0.000000, 917.000000)">
+                <g id="编组" transform="translate(889.000000, 178.000000)">
+                    <circle id="椭圆形" stroke="#A8A8A8" fill="#A8A8A8" cx="12" cy="12" r="10.4"></circle>
+                    <polyline id="路径-50" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" points="12 5.6 12 12.406913 16 16.8"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

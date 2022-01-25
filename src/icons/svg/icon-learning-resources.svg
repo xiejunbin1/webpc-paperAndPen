@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="181px" height="198px" viewBox="0 0 181 198" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/任务/学资源心得</title>
+    <defs>
+        <linearGradient x1="15.6172203%" y1="0%" x2="50%" y2="109.879149%" id="linearGradient-1">
+            <stop stop-color="#D9BCFF" offset="0%"></stop>
+            <stop stop-color="#D2B1FF" offset="0%"></stop>
+            <stop stop-color="#B287FF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M12,0.329896907 L60,0.329896907 L60,0.329896907 L84,24.3298969 L84,83.2874623 C84,89.9148793 78.627417,95.2874623 72,95.2874623 L12,95.2874623 C5.372583,95.2874623 2.58798134e-15,89.9148793 0,83.2874623 L0,12.3298969 C-8.11624501e-16,5.70247991 5.372583,0.329896907 12,0.329896907 Z" id="path-2"></path>
+        <filter x="-10.7%" y="-7.4%" width="126.2%" height="123.2%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.819076372   0 0 0 0 0.78617853   0 0 0 0 0.972599638  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#97BBFD" offset="0%"></stop>
+            <stop stop-color="#A2BAFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-16.3992799%" x2="50%" y2="126.279734%" id="linearGradient-5">
+            <stop stop-color="#A9CCFD" offset="0%"></stop>
+            <stop stop-color="#719DFB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-6">
+            <stop stop-color="#6C97EC" offset="0%"></stop>
+            <stop stop-color="#5C8DF7" offset="42.0866484%"></stop>
+            <stop stop-color="#3667D1" offset="70.8331472%"></stop>
+            <stop stop-color="#3062CE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.5.1课程-任务" transform="translate(-117.000000, -1008.000000)">
+            <g id="组件/任务pc备份-3" transform="translate(0.000000, 977.000000)">
+                <g id="编组-30" transform="translate(117.000000, 31.000000)">
+                    <rect id="矩形备份-4" fill="#E4DEFE" x="0" y="0" width="180" height="198" rx="10"></rect>
+                    <text id="学资源/心得" font-family="SourceHanSansCN-Regular, Source Han Sans CN" font-size="28" font-weight="normal" fill="#5624B3">
+                        <tspan x="14.962" y="163.1">学资源/心得</tspan>
+                    </text>
+                    <g id="编组-2" transform="translate(45.000000, 27.900000)">
+                        <g id="编组" transform="translate(-4.200000, 0.000000)">
+                            <g id="矩形">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                            </g>
+                            <rect id="矩形" fill="#FFFFFF" x="14" y="38.3298969" width="56" height="7" rx="3.5"></rect>
+                            <rect id="矩形备份-2" fill="#FFFFFF" x="14" y="63.3298969" width="56" height="7" rx="3.5"></rect>
+                            <path d="M60,0.329896907 L84,24.3298969 L64.8,24.3298969 C62.1490332,24.3298969 60,22.1808637 60,19.5298969 L60,0.329896907 L60,0.329896907 Z" id="路径-47" fill="#F2ECFF"></path>
+                        </g>
+                        <g id="编组-26" transform="translate(83.250000, 58.039535) rotate(20.000000) translate(-83.250000, -58.039535) translate(69.300000, 23.539535)">
+                            <path d="M15.4574856,54.5193772 L27.9,68.7903614 L27.9,68.7903614 L0,68.7903614 L12.4425144,54.5193772 C13.1684038,53.6868159 14.4317777,53.6003412 15.264339,54.3262306 C15.3330476,54.3861359 15.3975803,54.4506686 15.4574856,54.5193772 Z" id="三角形" fill="url(#linearGradient-4)" transform="translate(13.950000, 60.790361) rotate(180.000000) translate(-13.950000, -60.790361) "></path>
+                            <path d="M0,14.7903614 L27.9,14.7903614 L27.9,6.79036145 C27.9,3.47665295 25.2137085,0.790361446 21.9,0.790361446 L6,0.790361446 C2.6862915,0.790361446 -1.29399067e-15,3.47665295 0,6.79036145 L0,14.7903614 L0,14.7903614 Z" id="路径-8" fill="url(#linearGradient-5)"></path>
+                            <polygon id="路径-8" fill="url(#linearGradient-6)" points="0 52.7903614 27.9 52.7903614 27.9 12.7903614 0 12.7903614"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

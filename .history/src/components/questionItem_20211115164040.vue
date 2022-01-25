@@ -1,0 +1,360 @@
+<template>
+<section class="question-item-wrap">
+    <i class="iconGFY icon-auto" v-if="item.autoScoring == 1 && !item.groupExamList.length"></i>
+    <i class="iconGFY icon-excellent" v-if="item.qualityType == 'Q01'"></i>
+    <i class="iconGFY icon-boutique-badge" v-if="item.qualityType == 'Q02'"></i>
+    <div class="question-item-wrap__ctn">
+        <slot name="num"></slot>
+        <div ref="title" v-html="item.title" class="html-img" @click="previewImg"></div>
+        <div class="van-hairline--bottom init-wrap" v-for="(child, childIndex) in item.groupExamList" :key="childIndex">
+            ({{ childIndex + 1 }})<span v-if="child.examScore >= 0">本小题{{ child.examScore }}分</span>
+            <i class="iconGFY icon-auto" v-if="child.autoScoring == 1"></i>
+            <div v-html="child.title" class="html-img " @click="previewImg"></div>
+            <div class="question-item-wrap__btn-group" style="justify-content: flex-end; padding-right: 0">
+                <div class="btn-item" :class="{ active: child.analyseShow }" @click="$set(child, 'analyseShow', !child.analyseShow)">查看解析</div>
+            </div>
+            <div v-if="child.analyseShow" class="question-item-wrap__analyse mgb10 html-img" @click="previewImg">
+                <div>正确答案:</div>
+                <div v-html="child.answer"></div>
+                <div>解析:</div>
+                <div v-html="child.examExplain"></div>
+            </div>
+        </div>
+    </div>
+    <div class="question-item-wrap__btn-group van-hairline--top" :id="'question-item' + index">
+        <div class="aic" style="flex: 1; justify-content: flex-end">
+            <div class="icon-group">
+                <span>难度值：{{ item.titleDegree === 'D01' ? '容易' : item.titleDegree === 'D02' ? '中等' : '困难' }}</span>
+            </div>
+            <div class="btn-item" :class="{ active: analyseShow }" @click="analyseShow = !analyseShow">查看解析</div>
+        </div>
+    </div>
+    <div v-if="analyseShow" class="question-item-wrap__analyse html-img" @click="previewImg">
+        <div v-if="!item.groupExamList.length">
+            <!-- <div>正确答案及相关解析</div> -->
+            <div>【正确答案】</div>
+            <div v-html="item.answer"></div>
+            <div>【解析】</div>
+            <div v-html="item.examExplain"></div>
+        </div>
+    </div>
+    <van-dialog v-model="showDelDialog" message="确定移除当前试题？" show-cancel-button @cancel="cancelDel" @confirm="confirmDel">
+    </van-dialog>
+</section>
+</template>
+
+<script>
+import {
+    createCollectInfo,
+    delCollectInfo
+} from '@/api/index';
+import {
+    Dialog
+} from 'vant';
+import {
+    ImagePreview
+} from 'vant';
+export default {
+    name: 'questionItem',
+    props: ['isSend', 'index', 'isQuestion', 'up', 'down', 'item', 'isLec', 'showDel', 'showTooltip'], //isQuestion 是否试题页面适用  //isLec 讲义进来的试卷详情
+    data() {
+        return {
+            analyseShow: false,
+            tooltip: false,
+            collect: false,
+            show: false,
+            images: [],
+        };
+    },
+    mounted() {
+        this.$nextTick(() => {
+            //去掉题目内容的audio下载按钮
+            let dom = this.$refs['title'].querySelectorAll('audio');
+            if (dom.length) {
+                dom[0].controlsList = 'nodownload';
+            }
+        });
+    },
+    computed: {
+        showDelDialog: {
+            get() {
+                return this.item.showDel;
+            },
+            set() {
+                this.$emit('update:showDel', false);
+            },
+        },
+        showTool: {
+            get() {
+                return this.item.showTooltip;
+            },
+            set() {
+                this.$emit('update:showTooltip', false);
+            },
+        },
+    },
+
+    methods: {
+        changeToolTip(show) {
+            this.$emit('changeItem', this.item);
+            if (show) {
+                console.log('showTooltip true');
+                this.$emit('update:showTooltip', true);
+            } else {
+                this.$emit('update:showTooltip', false);
+            }
+        },
+        confirmDel() {
+            this.$emit('update:showDel', false);
+            this.$set(this.item, 'isRemove', !this.item.isRemove);
+            this.$emit('add', !this.item.isRemove);
+        },
+        cancelDel() {
+            this.$emit('update:showDel', false);
+        },
+        previewImg($event) {
+            if ($event.target.nodeName == 'IMG') {
+                console.log($event.target.src);
+                ImagePreview({
+                    images: [$event.target.src],
+                    // startPosition: 1,
+                    className: 'img-preview-init',
+                    onClose() {
+                        // do something
+                        console.log('close');
+                    },
+                });
+            }
+        },
+        handleAdd(e) {
+            if (this.item.isRemove) {
+                Dialog.confirm({
+                        title: '确定移除当前试题?',
+                    })
+                    .then(() => {
+                        this.$set(this.item, 'isRemove', !this.item.isRemove);
+                        this.$emit('add', !this.item.isRemove);
+                    })
+                    .catch(() => {
+                        // on cancel
+                    });
+            } else {
+                console.log(this.item, 'this.item');
+                this.$set(this.item, 'isRemove', !this.item.isRemove);
+                this.$emit('add', !this.item.isRemove);
+            }
+        },
+        childClick(e) {
+            this.$set(this.item, 'isRemove', false);
+        },
+        handleCollect(v) {
+            if (!v) {
+                //添加收藏
+                let obj = {
+                    interUser: 'value',
+                    interPwd: 'value',
+                    operateAccountNo: this.$store.getters.getUserInfo.accountNo,
+                    belongSchoolId: this.$store.getters.schoolId,
+                    resCollectInfo: {
+                        objectTypeCd: 'C01',
+                        objectId: this.item.examId,
+                        collectType: 'C01',
+                        accountNo: this.$store.getters.getUserInfo.accountNo,
+                        statusCd: this.item.statusCd,
+                        subjectType: localStorage.currentSubjectType,
+                    },
+                    sysTypeCd: 'S04', //web传S02 app传S04
+                };
+                let params = {
+                    requestJson: JSON.stringify(obj),
+                };
+                createCollectInfo(params).then((res) => {
+                    if (res.flag) {
+                        this.item.collectId = res.resCollectInfo.collectId;
+                        this.item.collectCount++;
+                        this.$toast('收藏成功');
+                    } else {
+                        this.$toast(res.msg);
+                    }
+                });
+            } else {
+                //取消收藏
+                let obj = {
+                    interUser: 'value',
+                    interPwd: 'value',
+                    operateAccountNo: this.$store.getters.getUserInfo.accountNo,
+                    belongSchoolId: this.$store.getters.schoolId,
+                    resCollectInfo: {
+                        collectId: this.item.collectId,
+                        objectTypeCd: 'C01',
+                        objectId: this.item.examId,
+                        collectType: 'C01',
+                        accountNo: this.$store.getters.getUserInfo.accountNo,
+                        statusCd: this.item.statusCd,
+                    },
+                };
+                let params = {
+                    requestJson: JSON.stringify(obj),
+                };
+                delCollectInfo(params).then((res) => {
+                    if (res.flag) {
+                        this.item.collectId = 0;
+                        this.item.collectCount--;
+                        this.$toast('取消收藏');
+                    } else {
+                        this.$toast(res.msg);
+                    }
+                });
+            }
+        },
+    },
+};
+</script>
+
+<style lang="less" scoped>
+@deep: ~'>>>';
+
+.question-item-wrap {
+    position: relative;
+    // background: #fff;
+    background: #f9f8f4;
+    margin-bottom: 10px;
+    font-size: 28px;
+    line-height: 56px;
+    color: #1b1b1b;
+    padding: 30px;
+
+    @{deep} .van-dialog__message {
+        font-size: 16px;
+    }
+
+    .icon-auto {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .icon-excellent {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .init-wrap {
+        margin: 0 -12px;
+        padding: 0 12px;
+        position: relative;
+    }
+
+    .tooltip-pop {
+        border-radius: 5px;
+        bottom: 90%;
+        position: absolute;
+        max-height: inherit;
+        top: inherit;
+        transform: none;
+        left: 3%;
+        overflow-y: inherit;
+
+        &-wrap {
+            padding: 10px;
+
+            &__item {
+                text-align: center;
+                width: 85px;
+                line-height: 24px;
+                border-radius: 5px;
+                margin-bottom: 5px;
+                font-size: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &::after {
+            width: 0;
+            height: 0;
+            border-width: 0 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent #fff;
+            content: ' ';
+            position: absolute;
+            bottom: -9px;
+            left: 2%;
+            transform: rotateZ(180deg);
+        }
+    }
+
+    &__ctn {
+        padding: 15px 12px;
+
+        .icon-group {
+            display: inline-block;
+            // align-items: center;
+            margin-top: 22px;
+
+            color: #626464;
+            line-height: 33px;
+
+            span {
+                margin-right: 15px;
+
+                i {
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+
+    &__btn-group {
+        position: relative;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+    }
+
+    .btn-item {
+        // flex: 0 0 63px;
+        width: 120px;
+        line-height: 33px;
+        text-align: center;
+        border-radius: 6px;
+        font-size: 24px;
+        border: 1px solid #999;
+        margin-right: 11px;
+
+        &.active {
+            color: #22ad7e;
+            border: 1px solid #22ad7e;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__analyse {
+        padding: 8px 12px;
+    }
+}
+
+// new-----
+.question-item-wrap__analyse {
+    font-size: 22px;
+    color: #606060;
+    line-height: 38px;
+    background: #f1efe8;
+    padding: 40px;
+}
+
+@{deep}.question-item-wrap__btn-group .icon-group {
+    font-size: 24px;
+    color: #626464;
+    line-height: 33px;
+    margin-right: 22px;
+}
+</style>

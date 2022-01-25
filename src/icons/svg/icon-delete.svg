@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/删除/黑</title>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="2.4.3.7堂测详情-待改进" transform="translate(-1368.000000, -307.000000)" stroke="#626464" stroke-width="3">
+            <g id="编组-22" transform="translate(510.000000, -0.848446)">
+                <g id="icon/删除/白" transform="translate(856.000000, 305.848446)">
+                    <g id="编组" transform="translate(17.000000, 17.000000) rotate(-315.000000) translate(-17.000000, -17.000000) translate(5.000000, 5.000000)">
+                        <line x1="0" y1="12" x2="24" y2="12" id="直线-13"></line>
+                        <line x1="12" y1="0" x2="12" y2="24" id="直线-13"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

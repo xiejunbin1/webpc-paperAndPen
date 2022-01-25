@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="181px" height="198px" viewBox="0 0 181 198" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/任务/试卷</title>
+    <defs>
+        <filter x="-19.2%" y="-22.2%" width="138.5%" height="144.4%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.674818841   0 0 0 0 0.352914953   0 0 0 0 0.037418499  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="3.07617188%" y1="0%" x2="66.7328708%" y2="90.4967642%" id="linearGradient-2">
+            <stop stop-color="#FFE297" offset="0%"></stop>
+            <stop stop-color="#FFC054" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#F4B169" offset="0%"></stop>
+            <stop stop-color="#E67938" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="34.1474015%" x2="73.3421793%" y2="34.1474015%" id="linearGradient-4">
+            <stop stop-color="#FFE9C2" offset="0%"></stop>
+            <stop stop-color="#FFDB99" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.5.1课程-任务" transform="translate(-117.000000, -138.000000)">
+            <g id="组件/任务pc" transform="translate(0.000000, 107.000000)">
+                <g id="图标/任务/堂测" transform="translate(117.000000, 31.000000)">
+                    <rect id="矩形备份-4" fill="#FEEDD1" x="0" y="0" width="180" height="198" rx="10"></rect>
+                    <g id="编组-4" transform="translate(43.200000, 33.300000)">
+                        <g id="编组备份-2" filter="url(#filter-1)" transform="translate(0.000000, -4.500000)">
+                            <path d="M18.3987422,0 L95.5675676,0 L95.5675676,0 L87.3035032,13.6844471 L87.3035032,79.9796361 C87.3035032,85.4838771 82.8414343,89.9459459 77.3371934,89.9459459 L18.3987422,89.9459459 C12.8945013,89.9459459 8.43243243,85.4838771 8.43243243,79.9796361 L8.43243243,9.9663098 C8.43243243,4.46206889 12.8945013,1.01111265e-15 18.3987422,0 Z" id="形状结合" fill="url(#linearGradient-2)"></path>
+                            <path d="M87.1351351,0 L104,0 L104,14.990991 C104,19.6480948 100.224671,23.4234234 95.5675676,23.4234234 C90.9104637,23.4234234 87.1351351,19.6480948 87.1351351,14.990991 L87.1351351,0 L87.1351351,0 Z" id="矩形" fill="url(#linearGradient-3)" transform="translate(95.567568, 11.711712) scale(-1, -1) translate(-95.567568, -11.711712) "></path>
+                            <path d="M65.458,66.5225225 L65.4585089,79.9796361 C65.4585089,85.4838771 69.9205777,89.9459459 75.4248187,89.9459459 L75.4248187,89.9459459 L9.9663098,89.9459459 C4.46206889,89.9459459 -6.43135226e-15,85.4838771 0,79.9796361 L0,66.5227057 L65.458,66.5225225 Z" id="形状结合" fill="url(#linearGradient-4)"></path>
+                            <rect id="矩形" fill="#FFFFFF" x="19.6756757" y="20.6126126" width="52.4684685" height="7.4954955" rx="3.74774775"></rect>
+                            <rect id="矩形备份-2" fill="#FFFFFF" x="19.6756757" y="44.036036" width="52.4684685" height="7.4954955" rx="3.74774775"></rect>
+                        </g>
+                        <text id="测试" font-family="SourceHanSansCN-Regular, Source Han Sans CN" font-size="28" font-weight="normal" fill="#B05D17">
+                            <tspan x="24.5" y="129.8">测试</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

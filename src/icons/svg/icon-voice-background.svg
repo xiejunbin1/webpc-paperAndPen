@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="230px" height="50px" viewBox="0 0 230 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>上课/语音背景</title>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.5.5.1任务-口语" transform="translate(-237.000000, -313.000000)" fill="#22AD7E">
+            <g id="编组-5" transform="translate(184.000000, 150.000000)">
+                <g id="编组-6" transform="translate(53.000000, 163.000000)">
+                    <path d="M0,0 L205,0 C218.807119,2.97807225e-14 230,11.1928813 230,25 C230,38.8071187 218.807119,50 205,50 L30,50 C13.4314575,50 5.58177493e-15,36.5685425 0,20 L0,0 L0,0 Z" id="矩形"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

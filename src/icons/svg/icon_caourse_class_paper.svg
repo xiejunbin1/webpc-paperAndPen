@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="181px" height="200px" viewBox="0 0 181 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/任务/堂测</title>
+    <defs>
+        <filter x="-24.7%" y="-28.6%" width="149.4%" height="157.1%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.728515625   0 0 0 0 0.387040344   0 0 0 0 0.0523620605  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FDDC76" offset="0%"></stop>
+            <stop stop-color="#FAB641" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#F4B169" offset="0%"></stop>
+            <stop stop-color="#E67938" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0.185751748%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFE3AA" offset="0%"></stop>
+            <stop stop-color="#EC8D1B" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.4.1课程-堂测" transform="translate(-117.000000, -127.000000)">
+            <g id="组件/任务pc" transform="translate(0.000000, 107.000000)">
+                <g id="编组" transform="translate(117.000000, 20.000000)">
+                    <rect id="矩形备份-4" fill="#FFF2DD" x="0" y="0" width="180" height="200" rx="10"></rect>
+                    <g id="编组备份-2" filter="url(#filter-1)" transform="translate(50.062500, 40.000000)">
+                        <path d="M17.5844875,0 L73.6421053,0 L73.6421053,0 L67.3166477,10.5800931 L67.3166477,58.9043443 C67.3166477,64.779063 62.5542472,69.5414634 56.6795286,69.5414634 L17.5844875,69.5414634 C11.7097689,69.5414634 6.94736842,64.779063 6.94736842,58.9043443 L6.94736842,10.6371191 C6.94736842,4.76240045 11.7097689,-6.97188527e-16 17.5844875,0 Z" id="形状结合" fill="url(#linearGradient-2)"></path>
+                        <path d="M67.2,-3.62376795e-14 L80.4,-3.62376795e-14 L80.4,11.4807805 C80.4,15.1258598 77.4450793,18.0807805 73.8,18.0807805 C70.1549207,18.0807805 67.2,15.1258598 67.2,11.4807805 L67.2,-3.62376795e-14 L67.2,-3.62376795e-14 Z" id="矩形" fill="url(#linearGradient-3)" transform="translate(73.800000, 9.040390) scale(-1, -1) translate(-73.800000, -9.040390) "></path>
+                        <path d="M50.816,51.4606829 L50.8163395,58.9043443 C50.8163395,64.1983043 54.6836859,68.5889971 59.7473202,69.4053644 L59.7470821,69.5414634 L10.6371191,69.5414634 C4.76240045,69.5414634 -4.60962498e-15,64.779063 0,58.9043443 L0,51.4608243 L50.816,51.4606829 Z" id="形状结合" fill="url(#linearGradient-4)"></path>
+                        <rect id="矩形" fill="#FFFFFF" x="15.2842105" y="15.299122" width="40.2947368" height="8.34497561" rx="4.1724878"></rect>
+                        <rect id="矩形备份-2" fill="#FFFFFF" x="15.2842105" y="33.3799024" width="40.2947368" height="8.34497561" rx="4.1724878"></rect>
+                    </g>
+                    <text id="堂测备份" font-family="SourceHanSansSC-Regular, Source Han Sans SC" font-size="24" font-weight="normal" fill="#333333">
+                        <tspan x="66" y="155">试卷</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

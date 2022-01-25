@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="108px" height="56px" viewBox="0 0 108 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>话题图标</title>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="97.050412%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#08BEEA" offset="0%"></stop>
+            <stop stop-color="#279CFC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.5.4.2任务-讨论-论题" transform="translate(-219.000000, -176.000000)">
+            <g id="编组-2" transform="translate(219.000000, 176.000000)">
+                <path d="M102,-7.10542736e-13 C105.313708,-7.11151454e-13 108,2.6862915 108,6 L108,49 L107.999,49 L108,54.4523642 C108,55.004649 107.552285,55.4523642 107,55.4523642 C106.721829,55.4523642 106.456229,55.3364976 106.267007,55.1326001 L100.576,49 L6,49 C2.6862915,49 4.05812251e-16,46.3137085 0,43 L0,6 C-4.05812251e-16,2.6862915 2.6862915,-7.09934017e-13 6,-7.10542736e-13 L102,-7.10542736e-13 Z" id="形状结合" fill="url(#linearGradient-1)"></path>
+                <text id="话题" font-family="PingFangSC-Medium, PingFang SC" font-size="26" font-weight="400" fill="#FFFFFF">
+                    <tspan x="28" y="35">话题</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="232px" height="65px" viewBox="0 0 232 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>奖励按钮</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="73.744131%" id="linearGradient-1">
+            <stop stop-color="#FFCD1A" offset="0%"></stop>
+            <stop stop-color="#FF9117" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFF7DD" offset="0%"></stop>
+            <stop stop-color="#F8C163" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.4.3.5堂测详情-满分奖励" transform="translate(-846.000000, -713.000000)">
+            <g id="编组-22" transform="translate(510.000000, -19.848446)">
+                <g id="奖励按钮" transform="translate(336.000000, 733.000000)">
+                    <rect id="矩形备份" stroke="url(#linearGradient-2)" stroke-width="2" fill="url(#linearGradient-1)" x="1" y="1" width="230" height="62" rx="30"></rect>
+                    <path d="M31.5052283,6.5 L54.9108606,6.47044794 M66.0833412,6.47044794 L70.6678379,6.5" id="形状" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

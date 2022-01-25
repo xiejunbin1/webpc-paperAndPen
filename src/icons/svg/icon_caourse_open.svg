@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>临时功能/icon/展开</title>
+    <g id="临时功能/icon/展开" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="编组" stroke="#FFFFFF" stroke-width="5">
+            <g id="编组-2" transform="translate(20.000000, 20.000000) scale(-1, 1) translate(-20.000000, -20.000000) translate(7.000000, 7.000000)">
+                <polyline id="路径-3" transform="translate(6.500000, 13.000000) scale(-1, 1) translate(-6.500000, -13.000000) " points="13 0 0 13 13 26"></polyline>
+                <polyline id="路径-3备份" opacity="0.586704799" transform="translate(19.500000, 13.000000) scale(-1, 1) translate(-19.500000, -13.000000) " points="26 0 13 13 26 26"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

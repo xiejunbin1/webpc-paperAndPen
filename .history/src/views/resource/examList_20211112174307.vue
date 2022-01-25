@@ -1,0 +1,657 @@
+<template>
+<section class="exam-list">
+    <!-- <div class="exam-list__tab">
+      <div @click="changeTab(item)" :class="{ active: item.active }" v-for="(item, index) in tabList" :key="index">{{ item.name }}</div>
+    </div> -->
+    <div class="common_body" ref="body">
+        <van-pull-refresh v-model="refLoading" @refresh="onRefresh">
+            <div v-if="!listLoading && list.length == 0" style="text-align: center; color: #999999">
+                <img class="null-tips" src="../../assets/img/resource/exam_empty.png" alt />
+            </div>
+            <van-list v-model="listLoading" :finished="finished" :finished-text="list.length > 0 ? '没有更多了' : '当前没有试卷，快去创建吧！'" @load="onLoad" :offset="80">
+                <list-item ref="listItem" @clickTo="viewDetail(item)" class="mgt10 common_list" style="background: #fff" @del="modifyTeachCourseRes(item, index)" @clickDel="clickDel(index)" v-for="(item, index) in list" :key="index" :itemTitle="item.testPaperName" :can-slide="true">
+                    <!-- <div slot="badge"><i class="iconGFY" :class="{ 'icon-send': item.stateName }"></i></div> -->
+                    <div slot="cover" class="cover">
+                        <!-- <i class="iconGFY icon-exam-100"></i> -->
+                        <svg-icon icon-class="icon-exam-100" style="width: 90px;"/>
+
+
+                    </div>
+                    <div slot="desc">
+
+                        <div class="desc-bottom">
+
+                        </div>
+
+                    </div>
+
+                </list-item>
+            </van-list>
+        </van-pull-refresh>
+    </div>
+</section>
+</template>
+
+<script>
+import listItem from '../../components/list-item';
+import {
+    teachApi
+} from '../../api/parent-GFY';
+import {
+    modifyTeachCourseRes,
+    addTestPaper,
+    addTeachCourseRes,
+    modifyTestPaper,
+    copyTestPaper
+} from '@/api/index';
+import eventBus from '@/utils/eventBus';
+
+export default {
+    name: 'examList',
+    components: {
+        listItem
+    },
+    data() {
+        return {
+            addExam: {
+                show: false,
+                title: '',
+                name: `《${this.$route.query.courseName}》标准测试卷1`,
+                difficult: 'D02',
+                share: 'S02',
+                testPaperId: '',
+                btnLoading: false,
+                index: 0,
+            },
+            list: [],
+            listLoading: false,
+            refLoading: false,
+            finished: false,
+            currentPage: 0,
+            total: 0,
+            scrollTop: 0,
+            currentItem: {},
+            // tchCourseId: this.$route.query.tchCourseId,
+            // sysCourseId: this.$route.query.sysCourseId,
+            // relationSeqId: this.$route.query.relationCourseId,
+            tchCourseId: this.$store.getters.getBaseData.tchCourseId,
+            sysCourseId: this.$store.getters.getBaseData.sysCourseId,
+            relationSeqId: this.$store.getters.getBaseData.relationCourseId,
+            clickIndex: 0,
+            isfEducation: this.$route.query.isfEducation,
+            // isfEducation: this.$store.getters.getBaseData.isfEducation,
+
+            tabList: [{
+                    name: '全部',
+                    value: '',
+                    active: true
+                },
+                {
+                    name: '共享',
+                    value: 'S03',
+                    active: false
+                },
+                {
+                    name: '校内',
+                    value: 'S02',
+                    active: false
+                },
+                {
+                    name: '个人',
+                    value: 'S01',
+                    active: false
+                },
+            ],
+        };
+    },
+    computed: {
+        show() {
+            return this.addExam.show;
+        },
+        shareType() {
+            return this.tabList.find((v) => v.active).value;
+        },
+    },
+    watch: {
+        show(v) {
+            if (!v) {
+                this.addExam.difficult = 'D02';
+                this.addExam.share = 'S02';
+                this.addExam.name = `《${this.$route.query.courseName}》标准测试卷1`;
+            }
+        },
+    },
+    beforeRouteLeave(to, from, next) {
+        if (this.addExam.show) {
+            this.addExam.show = false;
+            next(false);
+        } else if (this.$refs['listItem'] && this.$refs['listItem'][this.clickIndex] && this.$refs['listItem'][this.clickIndex].showDialog) {
+            this.$refs['listItem'][this.clickIndex].close();
+            next(false);
+        } else {
+            this.scrollTop = this.$refs['body'].scrollTop;
+            next();
+        }
+    },
+    beforeRouteEnter(to, from, next) {
+        next((vm) => {
+            vm.$nextTick(() => {
+                // vm.$refs["body"].scrollTo(0, vm.scrollTop);
+                vm.$refs['body'].scrollTop = vm.scrollTop;
+            });
+        });
+    },
+    mounted() {
+        // this.getClassTeachCourseInfo()
+        eventBus.$off('examListRefresh');
+        eventBus.$on('examListRefresh', (data) => {
+            this.onRefresh();
+        });
+    },
+    destroyed() {
+        eventBus.$off('examListRefresh');
+    },
+    methods: {
+        changeTab(item) {
+            if (item.active) return;
+            this.$store.commit('setVanLoading', true);
+            this.tabList.forEach((v) => {
+                v.active = false;
+            });
+            item.active = true;
+            this.onRefresh();
+        },
+        clickDel(index) {
+            this.clickIndex = index;
+        },
+        createTestPaper() {
+            this.$router.push({
+                path: `/questionList`,
+                query: {
+                    tchCourseId: this.$route.query.tchCourseId,
+                    sysCourseId: this.$route.query.sysCourseId,
+                    relationCourseId: this.$route.query.relationCourseId,
+                    courseName: this.$route.query.courseName,
+                    subjectType: this.isfEducation ? 'S20' : localStorage.currentSubjectType,
+                    from: 'examList',
+                    isfEducation: this.isfEducation,
+                },
+            });
+        },
+        viewDetail(item) {
+            console.log(item, "itemitemitem")
+            let fomdete = this.$store.getters.getBaseData
+            console.log(this.$store.getters.getBaseData, "this.$toast.getters.getTchCourseInfo")
+            this.$store.commit('setResourceInfo', item);
+            this.$store.commit('setTaskClassInfo', '');
+            this.$store.commit('setExamDetailData', {})
+            this.$store.commit('setExamDetailData', {
+                info: item,
+                testPaperId: item.testPaperId,
+                tchCourseId: fomdete.tchCourseId,
+                taskId: item.taskId,
+                taskType: item.testPaperType,
+                resourceType: fomdete.relationCourseId,
+                courseName: fomdete.courseName, // 重发任务需要用到
+                from: 'classStatList',
+            });
+            let data = {
+                exeamSendType: 'class',
+                tchCourseId: fomdete.tchCourseId,
+                resourceName: item.testPaperName,
+                resourceId: item.testPaperId,
+                duration: item.duration,
+            };
+            console.log(this.$store.getters.getPushstatus)
+            console.log('obj--', data);
+            this.socketApi.sendSock({
+                type: 'exeamSend',
+                data,
+                code: 0,
+                msg: '成功',
+            });
+            // setTimeout(() => {
+            //   this.$router.push({
+            //     name: `examDetail`,
+            //     query: {
+            //       tchCourseId: this.$route.query.tchCourseId,
+            //       sysCourseId: this.$route.query.sysCourseId,
+            //       relationCourseId: this.$route.query.relationCourseId,
+            //       type: item.stateName ? 1 : 0,
+            //       testPaperId: item.testPaperId,
+            //       subjectType: this.isfEducation ? 'S20' : localStorage.currentSubjectType,
+            //       classGrade: this.$route.query.classGrade,
+            //       title: item.testPaperName,
+            //       isfEducation: this.isfEducation,
+            //       duration: item.duration,
+            //       from: 'examList',
+            //     },
+            //   });
+            // },500)
+
+        },
+        copy(item) {
+            this.addExam.title = '复制';
+            this.addExam.show = true;
+            this.addExam.testPaperId = item.testPaperId;
+            this.addExam.name = item.testPaperName + '-副本';
+            this.currentItem = item;
+        },
+        copyTestPaper(copyTestPaperId) {
+            this.addExam.btnLoading = true;
+            let obj = {
+                interUser: 'runLfb',
+                interPwd: '25d55ad283aa400af464c76d713c07ad',
+                operateAccountNo: this.$store.getters.getUserInfo.accountNo,
+                belongSchoolId: this.$store.getters.schoolId,
+                copyTestPaperId,
+                oldTestPaperId: this.addExam.testPaperId,
+            };
+            let params = {
+                requestJson: JSON.stringify(obj),
+            };
+            return copyTestPaper(params);
+            //   .then(res => {
+            //   this.addExam.btnLoading = false
+            //   if (res.flag) {
+            //
+            //   } else {
+            //     this.$toast(res.msg)
+            //   }
+            //
+            // })
+        },
+        edit(item, index) {
+            this.addExam.title = '编辑';
+            this.addExam.show = true;
+            this.addExam.name = item.testPaperName;
+            this.addExam.difficult = item.testPaperDegree;
+            this.addExam.share = item.shareType;
+            this.addExam.testPaperId = item.testPaperId;
+            this.addExam.index = index;
+        },
+        modifyTestPaper() {
+            if (!this.addExam.name) {
+                return this.$toast('请输入试卷名称');
+            }
+            this.addExam.btnLoading = true;
+            let obj = {
+                interUser: 'runLfb',
+                interPwd: '25d55ad283aa400af464c76d713c07ad',
+                operateAccountNo: this.$store.getters.getUserInfo.accountNo,
+                belongSchoolId: this.$store.getters.schoolId,
+                testPaperInfo: {
+                    testPaperId: this.addExam.testPaperId,
+                    testPaperName: this.addExam.name,
+                    shareType: this.addExam.share,
+                    testPaperDegree: this.addExam.difficult,
+                },
+            };
+            let params = {
+                requestJson: JSON.stringify(obj),
+            };
+            modifyTestPaper(params).then((res) => {
+                this.addExam.btnLoading = false;
+                if (res.flag) {
+                    this.list[this.addExam.index].testPaperName = this.addExam.name;
+                    this.list[this.addExam.index].shareType = this.addExam.share;
+                    this.list[this.addExam.index].testPaperDegree = this.addExam.difficult;
+                    this.addExam.show = false;
+                    this.$toast('编辑成功');
+                } else {
+                    this.$toast(res.msg);
+                }
+            });
+        },
+        addTeachCourseRes(resourceId) {
+            this.addExam.btnLoading = true;
+            let obj = {
+                interUser: 'runLfb',
+                interPwd: '25d55ad283aa400af464c76d713c07ad',
+                operateAccountNo: this.$store.getters.getUserInfo.accountNo,
+                belongSchoolId: this.$store.getters.schoolId,
+                operateRoleType: 'A02',
+                tchCourseId: this.$route.query.tchCourseId,
+                sysCourseId: this.$route.query.sysCourseId,
+                relationSeqId: this.$route.query.relationCourseId,
+                resourceType: 'R02',
+                resourceId,
+                statusCd: 'S04',
+            };
+            let params = {
+                requestJson: JSON.stringify(obj),
+            };
+            return addTeachCourseRes(params);
+            //  .then(res => {
+            //   this.addExam.btnLoading = false
+            //   if (res.flag) {
+            //     if (this.addExam.title === '新建试卷') {
+            //       this.addExam.show = false
+            //       this.$toast('添加成功')
+            //       this.$refs['body'].scrollTo(0, 0)
+            //       this.onRefresh()
+            //       this.$router.push(`/questionList`)
+            //     }
+            //
+            //   } else {
+            //     this.$toast(res.msg)
+            //   }
+            // })
+        },
+        addTestPaper() {
+            if (!this.addExam.name) {
+                return this.$toast('请输入试卷名称');
+            }
+            this.addExam.btnLoading = true;
+            let obj = {
+                interUser: 'runLfb',
+                interPwd: '25d55ad283aa400af464c76d713c07ad',
+                operateAccountNo: this.$store.getters.getUserInfo.accountNo,
+                belongSchoolId: this.$store.getters.schoolId,
+                testPaperInfo: {
+                    testPaperId: '',
+                    classGrade: this.$route.query.classGrade, //归属年级
+                    subjectType: this.$route.query.subjectType, //学科
+                    shareType: this.addExam.title == '复制' ? 'S01' : this.addExam.share, //共享级别
+                    belongSchoolId: this.$store.getters.schoolId, //归属学校
+                    belongAccountNo: this.$store.getters.getUserInfo.accountNo, //归属账号
+                    testPaperName: this.addExam.name, //试卷名称
+                    testPaperType: 'T02', //试卷类型
+                    provinceCode: '', //省份编号
+                    areaCode: this.$store.getters.getUserInfo.areaCode, //地区编号
+                    belongYear: new Date().getFullYear(), //归属年份
+                    testPaperMode: 'M01', //试卷模式
+                    testPaperDegree: this.addExam.difficult, //试卷难度
+                    score: this.addExam.title == '复制' ? this.currentItem.score : 0, //试卷分数，默认0分
+                    subjectiveItemNum: this.addExam.title == '复制' ? this.currentItem.subjectiveItemNum : 0, //主观题数量
+                    objectiveItemNum: this.addExam.title == '复制' ? this.currentItem.objectiveItemNum : 0, //客观题数量
+                    duration: 10, //试卷时长
+                    statusCd: 'S01', //状态
+                },
+            };
+            let params = {
+                requestJson: JSON.stringify(obj),
+            };
+            addTestPaper(params).then((res) => {
+                this.addExam.btnLoading = false;
+                if (res.flag) {
+                    if (this.addExam.title === '复制') {
+                        Promise.all([this.copyTestPaper(res.testPaperInfo.testPaperId), this.addTeachCourseRes(res.testPaperInfo.testPaperId)]).then((ret) => {
+                            this.addExam.btnLoading = false;
+                            if (ret.every((v) => v.flag)) {
+                                this.addExam.show = false;
+                                // this.$refs['body'].scrollTo(0, 0)
+                                this.$refs['body'].scrollTop = 0;
+                                this.onRefresh();
+                                this.$toast('复制成功');
+                            } else {
+                                this.$toast(ret[0].msg);
+                            }
+                        });
+                    } else {
+                        Promise.all([this.addTeachCourseRes(res.testPaperInfo.testPaperId)]).then((ret) => {
+                            this.addExam.btnLoading = false;
+                            if (ret[0].flag) {
+                                this.addExam.show = false;
+                                this.$toast('添加成功');
+                                // this.$refs['body'].scrollTo(0, 0)
+                                this.$refs['body'].scrollTop = 0;
+                                this.onRefresh();
+                                this.$router.push({
+                                    path: `/questionList`,
+                                    query: {
+                                        tchCourseId: this.$route.query.tchCourseId,
+                                        sysCourseId: this.$route.query.sysCourseId,
+                                        relationSeqId: this.$route.query.relationCourseId,
+                                    },
+                                });
+                            } else {
+                                this.$toast(ret[0].msg);
+                            }
+                        });
+                    }
+                } else {
+                    this.$toast(res.msg);
+                }
+            });
+        },
+        modifyTeachCourseRes(item, index, type) {
+            let obj = {
+                interUser: 'runLfb',
+                interPwd: '25d55ad283aa400af464c76d713c07ad',
+                operateAccountNo: this.$store.getters.getUserInfo.accountNo,
+                belongSchoolId: this.$store.getters.schoolId,
+                operateRoleType: 'A02',
+                tchCourseId: this.$route.query.tchCourseId,
+                sysCourseId: this.$route.query.sysCourseId,
+                relationSeqId: this.$route.query.relationCourseId,
+                resourceType: 'R02',
+                resourceId: item.testPaperId,
+                statusCd: type ? (item.statusCd == 'S02' ? 'S01' : 'S02') : 'S03',
+            };
+            let params = {
+                requestJson: JSON.stringify(obj),
+            };
+            modifyTeachCourseRes(params).then((res) => {
+                if (res.flag) {
+                    if (type) {
+                        item.statusCd = item.statusCd == 'S02' ? 'S01' : 'S02';
+                    } else {
+                        this.list.splice(index, 1);
+                        this.$toast('删除成功');
+                    }
+                } else {
+                    this.$toast(res.msg);
+                }
+            });
+        },
+        handleSubmit() {
+            if (this.addExam.title == '编辑') {
+                this.modifyTestPaper();
+            } else {
+                this.addTestPaper();
+            }
+        },
+        async onLoad() {
+            this.currentPage++;
+            if (this.currentPage > this.total && this.currentPage > 1) {
+                return;
+            }
+            console.log(this.listLoading,"this.listLoading")
+            this.getList();
+        },
+        async onRefresh() {
+            // this.listLoading = false
+            this.finished = false;
+            this.currentPage = 0;
+            this.onLoad();
+        },
+        getList() {
+            const page = this.currentPage;
+            let obj = {
+                interUser: 'runLfb',
+                interPwd: '7829b380bd1a1c4636ab735c6c7428bc',
+                operateAccountNo: this.$store.getters.getUserInfo.accountNo,
+                belongSchoolId: this.$store.getters.getUserInfo.schoolId,
+                classId: this.$store.getters.getUserInfo.classId,
+                operateRoleType: 'A02',
+                accountNo: this.$store.getters.getUserInfo.accountNo,
+                tchCourseId: this.tchCourseId,
+                sysCourseId: this.sysCourseId,
+                relationSeqId: this.relationCourseId,
+                resourceType: 'R02',
+                shareType: this.shareType,
+                sourceName: '',
+                pageSize: '20',
+                currentPage: page,
+            };
+            let params = {
+                requestJson: JSON.stringify(obj),
+            };
+            teachApi.getTeachCourseResDetail(params).then((res) => {
+                console.log(page, "page")
+                this.$store.commit('setVanLoading', false);
+                this.listLoading = false;
+                this.refLoading = false;
+                this.total = res.total;
+                if (res.flag && res.data && res.data[0] && res.data[0].testPaperInfo && res.data[0].testPaperInfo.length) {
+                    this.list = page === 1 ? res.data[0].testPaperInfo : this.list.concat(res.data[0].testPaperInfo);
+                    if (page >= res.total) {
+                        this.finished = true;
+                    }
+                    this.listLoading = false;
+                } else {
+                    this.list = page === 1 ? [] : this.list.concat([]);
+                    this.finished = true;
+                }
+                console.log(this.list, "this.list")
+            });
+        },
+        senTask(obj) {
+            if (!obj.objectiveItemNum && !obj.subjectiveItemNum) {
+                return this.$toast('该试卷不含试题');
+            }
+            // if (obj.stateName) {
+            //   return this.$toast('该试卷已发任务,不能重复发任务')
+            // }
+            console.log('发任务：', obj.testPaperName);
+            this.$store.commit('setResourceInfo', obj);
+            this.$store.commit('setTaskClassInfo', '');
+            try {
+                MobclickAgent.onEvent('examAddTask');
+            } catch (e) {
+                console.log(e);
+            }
+            this.$router.push(`/addTask?type=exam&_t=new&from=examList${this.isfEducation ? '&isfEducation=true' : ''}`);
+        },
+    },
+};
+</script>
+
+<style lang="less" scoped>
+@deep: ~'>>>';
+
+.exam-list {
+    display: flex;
+    flex-direction: column;
+    background: #f5f5f5;
+
+    &__tab {
+        background: #fff;
+        flex: 0 0 44px;
+        display: flex;
+        align-items: center;
+
+        >div {
+            flex: 1;
+            color: #333;
+            font-size: 16px;
+            text-align: center;
+            line-height: 44px;
+            border-left: 1px solid #eee;
+
+            &.active {
+                color: @blue;
+            }
+
+            &:first-child {
+                border: none;
+            }
+        }
+    }
+
+    .exam-pop {
+        &__title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 47px;
+        }
+
+        .clear {
+            color: @blue;
+            margin-left: 10px;
+        }
+
+        .radio-normal {
+            border: 1px solid #999;
+            border-radius: 50%;
+            background: none;
+        }
+
+        &__footer {
+            padding: 5px 10px;
+
+            .btn {
+                width: 100%;
+                border-radius: 22px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__body {
+        flex: 1;
+        overflow-y: auto;
+
+        @{deep} .cover {
+            // background: @blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            font-size: 130px;
+        }
+
+        .desc-top {
+            display: flex;
+            margin-bottom: 10px;
+
+            .iconGFY {
+                margin-right: 5px;
+            }
+        }
+
+        .desc-bottom {
+            display: flex;
+            font-size: 12px;
+            color: #666;
+
+            .iconGFY {
+                margin-right: 3px;
+            }
+
+            >div {
+                margin-right: 7px;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .eye {
+            color: #f89451;
+        }
+    }
+
+    &__footer {
+        flex: 0 0 55px;
+        padding: 5px 10px;
+        background: #fff;
+
+        .btn {
+            width: 100%;
+            border-radius: 22px;
+            font-size: 16px;
+        }
+    }
+}
+
+// .null-tips {
+//   margin-top: 50px;
+//   margin-left: 50%;
+//   transform: translateX(-50%);
+//   width: 100%;
+// }
+</style>

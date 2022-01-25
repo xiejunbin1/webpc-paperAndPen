@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>临时功能/icon/退出</title>
+    <g id="临时功能/icon/退出" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组">
+            <path d="M35,35 L14,35 C12.3431458,35 11,33.6568542 11,32 L11,9 C11,7.34314575 12.3431458,6 14,6 L35,6 L35,6" id="路径" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(23.000000, 20.500000) scale(-1, 1) translate(-23.000000, -20.500000) "></path>
+            <path d="M10.7876067,12.2260427 L2.36679233,19.1157999 C1.93934752,19.4655275 1.87634525,20.0955502 2.22607282,20.522995 C2.26818366,20.5744638 2.31532353,20.6216037 2.36679233,20.6637145 L10.7876067,27.5534718 C11.2150515,27.9031993 11.8450742,27.8401971 12.1948018,27.4127523 C12.3409799,27.2340901 12.4208445,27.0103568 12.4208445,26.7795145 L12.4208445,13 C12.4208445,12.4477153 11.9731293,12 11.4208445,12 C11.1900022,12 10.9662689,12.0798646 10.7876067,12.2260427 Z" id="路径-56" fill="#FFFFFF"></path>
+            <line x1="8" y1="20.5" x2="19.6653545" y2="20.5" id="路径-54" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="117px" height="47px" viewBox="0 0 117 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>上课/教师点评</title>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.4.6.2主观题详情-学生答案" transform="translate(-597.000000, -337.000000)">
+            <g id="编组-7" transform="translate(519.000000, 151.000000)">
+                <g id="编组-8" transform="translate(19.000000, 30.000000)">
+                    <g id="上课/教师点评" transform="translate(59.000000, 156.000000)">
+                        <polygon id="路径-49" fill="#097651" points="0 36 10.8347729 46.8347729 10.8347729 33"></polygon>
+                        <path d="M14.5605139,0 L109.106153,0 C112.419861,-4.16143205e-15 115.106153,2.6862915 115.106153,6 C115.106153,6.54272401 115.032517,7.08293888 114.88726,7.60586318 L108.220594,31.6058632 C107.499227,34.2027818 105.134733,36 102.439486,36 L0,36 L0,36 L8.77940644,4.39413682 C9.50077271,1.79721823 11.8652671,-3.9306961e-16 14.5605139,0 Z" id="矩形" fill="#22AD7E"></path>
+                        <text id="教师点评" font-family="PingFangSC-Regular, PingFang SC" font-size="22" font-weight="normal" letter-spacing="0.366666667" fill="#FFFFFF">
+                            <tspan x="16" y="26">教师点评</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

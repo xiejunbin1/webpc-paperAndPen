@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="181px" height="200px" viewBox="0 0 181 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/任务/微课程</title>
+    <defs>
+        <filter x="-24.1%" y="-29.9%" width="148.2%" height="159.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0367531316   0 0 0 0 0.471014493   0 0 0 0 0.33435882  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="0%" y1="8.29455818%" x2="0%" y2="60.3680182%" id="linearGradient-2">
+            <stop stop-color="#34CF9B" offset="0%"></stop>
+            <stop stop-color="#22AD7E" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-10.0833325%" x2="50%" y2="106.614357%" id="linearGradient-3">
+            <stop stop-color="#33CD99" offset="0%"></stop>
+            <stop stop-color="#22AD7E" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.5.1课程-任务" transform="translate(-117.000000, -667.000000)">
+            <g id="组件/任务pc备份-2" transform="translate(0.000000, 647.000000)">
+                <g id="编组" transform="translate(117.000000, 20.000000)">
+                    <rect id="矩形备份" fill="#DEFFE5" x="0" y="0" width="180" height="200" rx="10"></rect>
+                    <g id="编组-25备份" filter="url(#filter-1)" transform="translate(49.062500, 42.000000)">
+                        <path d="M61.8296949,20.6546883 C66.0442833,17.9296645 70.2588717,15.2046407 74.4734601,12.4796169 C77.0087246,10.8403925 80.3928165,11.5667765 82.0320409,14.102041 C82.603823,14.9863732 82.908,16.017039 82.908,17.0701194 L82.908,49.2451633 C82.908,52.2642067 80.4605818,54.7116249 77.4415385,54.7116249 C76.2256161,54.7116249 75.0444002,54.3062301 74.084734,53.5595655 L61.8296949,44.0245781 L61.8296949,44.0245781 C61.8296949,28.4446516 61.8296949,20.6546883 61.8296949,20.6546883 Z" id="路径-40" fill="url(#linearGradient-2)"></path>
+                        <rect id="矩形" fill="url(#linearGradient-3)" x="0" y="0" width="67.4505763" height="66.0453559" rx="12.7550769"></rect>
+                        <path d="M25.2939661,22.5921548 L25.2939661,42.2503767 C25.2939661,44.2630723 26.9255782,45.8946844 28.9382738,45.8946844 C29.6761431,45.8946844 30.3966313,45.6707017 31.004448,45.2523599 L44.9290219,35.6684967 C46.5869714,34.5273802 47.0059473,32.2582889 45.8648308,30.6003394 C45.6289434,30.2576141 45.3361094,29.9578131 44.9990243,29.7139337 L31.0744504,19.6395749 C29.4437856,18.4597971 27.1654717,18.8253133 25.9856939,20.4559782 C25.5360357,21.0774866 25.2939661,21.8250399 25.2939661,22.5921548 Z" id="路径-41" fill="#FFFFFF"></path>
+                    </g>
+                    <text id="微课/心得" font-family="SourceHanSansSC-Regular, Source Han Sans SC" font-size="24" font-weight="normal" fill="#333333">
+                        <tspan x="37.296" y="155">微课/心得</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #797979;">
+    <title>临时功能/icon/试题目录</title>
+    <g id="临时功能/icon/试题目录" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#797979" x="0" y="0" width="40" height="40"></rect>
+        <g id="编组" fill="#FFFFFF">
+            <path d="M34,3 C35.1045695,3 36,3.8954305 36,5 L36,35 C36,36.1045695 35.1045695,37 34,37 L6,37 C4.8954305,37 4,36.1045695 4,35 L4,5 C4,3.8954305 4.8954305,3 6,3 L34,3 Z M18,22 L8,22 L8,30 L18,30 L18,22 Z M32,22 L22,22 L22,30 L32,30 L32,22 Z M18,10 L8,10 L8,18 L18,18 L18,10 Z M32,10 L22,10 L22,18 L32,18 L32,10 Z" id="形状结合"></path>
+        </g>
+    </g>
+</svg>

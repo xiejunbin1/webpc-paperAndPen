@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>语音/动画1</title>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.5.5.1任务-口语" transform="translate(-256.000000, -323.000000)">
+            <g id="编组-5" transform="translate(184.000000, 150.000000)">
+                <g id="编组-3" transform="translate(53.000000, 163.000000)">
+                    <g id="编组-2" transform="translate(19.000000, 10.000000)">
+                        <circle id="椭圆形" fill="#FFFFFF" cx="8.25" cy="15.7678017" r="2.25"></circle>
+                        <path d="M13.992591,22.8486159 C15.5605408,20.9150793 16.5,18.4511517 16.5,15.7678017 C16.5,12.5832743 15.1768373,9.707788 13.0502916,7.6611228" id="路径" stroke="#FFFFFF" stroke-width="2.25" stroke-linecap="round"></path>
+                        <path d="M19.3166937,28.1653505 C22.2315248,24.8606299 24,20.5207406 24,15.7678017 C24,10.4567955 21.7918522,5.66152986 18.243552,2.25" id="路径" stroke="#FFFFFF" stroke-width="2.25" stroke-linecap="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

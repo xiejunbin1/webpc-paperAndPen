@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="181px" height="198px" viewBox="0 0 181 198" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/任务/学资源试卷</title>
+    <defs>
+        <linearGradient x1="15.6172203%" y1="0%" x2="50%" y2="109.879149%" id="linearGradient-1">
+            <stop stop-color="#D9BCFF" offset="0%"></stop>
+            <stop stop-color="#D2B1FF" offset="0%"></stop>
+            <stop stop-color="#B287FF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M12,0.329896907 L60,0.329896907 L60,0.329896907 L84,24.3298969 L84,83.2874623 C84,89.9148793 78.627417,95.2874623 72,95.2874623 L12,95.2874623 C5.372583,95.2874623 2.58798134e-15,89.9148793 0,83.2874623 L0,12.3298969 C-8.11624501e-16,5.70247991 5.372583,0.329896907 12,0.329896907 Z" id="path-2"></path>
+        <filter x="-10.7%" y="-7.4%" width="126.2%" height="123.2%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.819076372   0 0 0 0 0.78617853   0 0 0 0 0.972599638  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-30.3%" y="-37.7%" width="160.6%" height="175.5%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.728515625   0 0 0 0 0.387040344   0 0 0 0 0.0523620605  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#F4B169" offset="0%"></stop>
+            <stop stop-color="#E67938" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="34.1474015%" x2="73.3421793%" y2="34.1474015%" id="linearGradient-6">
+            <stop stop-color="#FFE9C2" offset="0%"></stop>
+            <stop stop-color="#FFE1AC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.5.1课程-任务" transform="translate(-117.000000, -1878.000000)">
+            <g id="组件/任务pc备份-6" transform="translate(0.000000, 1847.000000)">
+                <g id="编组-34" transform="translate(117.000000, 31.000000)">
+                    <rect id="矩形备份-4" fill="#E4DEFE" x="0" y="0" width="180" height="198" rx="10"></rect>
+                    <text id="学资源/试卷" font-family="SourceHanSansCN-Regular, Source Han Sans CN" font-size="28" font-weight="normal" fill="#5624B3">
+                        <tspan x="14.962" y="163.1">学资源/试卷</tspan>
+                    </text>
+                    <g id="编组" transform="translate(40.800000, 23.100000)">
+                        <g id="矩形">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                            <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        </g>
+                        <rect id="矩形" fill="#FFFFFF" x="14" y="38.3298969" width="56" height="7" rx="3.5"></rect>
+                        <rect id="矩形备份-2" fill="#FFFFFF" x="14" y="63.3298969" width="56" height="7" rx="3.5"></rect>
+                        <path d="M60,0.329896907 L84,24.3298969 L64.8,24.3298969 C62.1490332,24.3298969 60,22.1808637 60,19.5298969 L60,0.329896907 L60,0.329896907 Z" id="路径-47" fill="#F2ECFF"></path>
+                    </g>
+                    <g id="编组备份-2" transform="translate(96.300000, 66.600000)" filter="url(#filter-4)">
+                        <path d="M19.6371191,0 L60,0 L60,0 L55.1630616,8.06346177 L55.1630616,42.3628809 C55.1630616,48.2375996 50.4006611,53 44.5259425,53 L19.6371191,53 C13.7624004,53 9,48.2375996 9,42.3628809 L9,10.6371191 C9,4.76240045 13.7624004,1.07916831e-15 19.6371191,0 Z" id="形状结合" fill="#FFCC76"></path>
+                        <path d="M55,0 L66,0 L66,7.5 C66,10.5375661 63.5375661,13 60.5,13 C57.4624339,13 55,10.5375661 55,7.5 L55,0 L55,0 Z" id="矩形" fill="url(#linearGradient-5)" transform="translate(60.500000, 6.500000) scale(-1, -1) translate(-60.500000, -6.500000) "></path>
+                        <path d="M39.974,40 L39.9740287,42.3628809 C39.9740287,46.9694753 42.9023027,50.8921346 46.9989777,52.3709859 L46.9992841,53 L10.6371191,53 C4.76240045,53 -4.60962498e-15,48.2375996 0,42.3628809 L0,40.0001017 L39.974,40 Z" id="形状结合" fill="url(#linearGradient-6)"></path>
+                        <rect id="矩形" fill="#FFFFFF" x="16" y="11" width="31" height="5" rx="2.5"></rect>
+                        <rect id="矩形备份-2" fill="#FFFFFF" x="16" y="25" width="31" height="5" rx="2.5"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

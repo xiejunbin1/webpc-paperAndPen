@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="181px" height="198px" viewBox="0 0 181 198" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/任务/微课程试卷</title>
+    <defs>
+        <filter x="-26.5%" y="-41.2%" width="153.0%" height="182.4%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0367531316   0 0 0 0 0.471014493   0 0 0 0 0.33435882  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-18.5%" y="-23.5%" width="137.0%" height="147.1%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0367531316   0 0 0 0 0.471014493   0 0 0 0 0.33435882  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="100%" y1="80.2469136%" x2="0%" y2="19.7530864%" id="linearGradient-3">
+            <stop stop-color="#149066" offset="0%"></stop>
+            <stop stop-color="#45CFA1" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-32.8%" y="-40.0%" width="165.6%" height="180.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.728515625   0 0 0 0 0.387040344   0 0 0 0 0.0523620605  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#F4B169" offset="0%"></stop>
+            <stop stop-color="#E67938" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="34.1474015%" x2="73.3421793%" y2="34.1474015%" id="linearGradient-6">
+            <stop stop-color="#FFE9C2" offset="0%"></stop>
+            <stop stop-color="#FFE1AC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="2课堂" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.5.1课程-任务" transform="translate(-117.000000, -1588.000000)">
+            <g id="组件/任务pc备份-5" transform="translate(0.000000, 1557.000000)">
+                <g id="编组-47" transform="translate(117.000000, 31.000000)">
+                    <rect id="矩形备份-4" fill="#BDF8DE" x="0" y="0" width="180" height="198" rx="10"></rect>
+                    <text id="微课程/试卷" font-family="SourceHanSansCN-Regular, Source Han Sans CN" font-size="28" font-weight="normal" fill="#15694E">
+                        <tspan x="14.962" y="163.1">微课程/试卷</tspan>
+                    </text>
+                    <g id="编组-25备份" filter="url(#filter-1)" transform="translate(24.000000, 34.638675)">
+                        <g id="编组-45" transform="translate(0.000000, -0.000000)">
+                            <g id="编组-25备份" filter="url(#filter-2)">
+                                <rect id="矩形" fill="url(#linearGradient-3)" x="0" y="0.790361446" width="108" height="84" rx="12.7550769"></rect>
+                                <rect id="矩形" fill="#60D2B1" x="12" y="10.7903614" width="85" height="64" rx="10"></rect>
+                                <path d="M47,31.1283953 L47,53.6669495 C47,55.6796451 48.6316121,57.3112572 50.6443077,57.3112572 C51.4098204,57.3112572 52.1558953,57.0701967 52.7766827,56.6222762 L68.0054355,45.6341807 C69.6376174,44.4565026 70.0060654,42.178661 68.8283872,40.5464791 C68.6169888,40.2534954 68.3631983,39.9935754 68.0753418,39.7752467 L52.846589,28.2247879 C51.2429709,27.0085016 48.9569867,27.3224959 47.7407003,28.926114 C47.2601267,29.5597284 47,30.333148 47,31.1283953 Z" id="路径-41" fill="#FFFFFF"></path>
+                            </g>
+                            <g id="编组备份-2" filter="url(#filter-4)" transform="translate(71.000000, 33.790361)">
+                                <path d="M18.6371191,0 L56,0 L56,0 L51.4475874,7.60703941 L51.4475874,39.3628809 C51.4475874,45.2375996 46.6851869,50 40.8104682,50 L18.6371191,50 C12.7624004,50 8,45.2375996 8,39.3628809 L8,10.6371191 C8,4.76240045 12.7624004,4.63188199e-15 18.6371191,0 Z" id="形状结合" fill="#FFCF7E"></path>
+                                <path d="M51,0 L61,0 L61,7 C61,9.76142375 58.7614237,12 56,12 C53.2385763,12 51,9.76142375 51,7 L51,0 L51,0 Z" id="矩形" fill="url(#linearGradient-5)" transform="translate(56.000000, 6.000000) scale(-1, -1) translate(-56.000000, -6.000000) "></path>
+                                <path d="M37.422,38 L37.422495,39.3628809 C37.422495,43.799734 40.138946,47.6021261 43.9994351,49.1976441 L43.9993298,50 L10.6371191,50 C4.76240045,50 -1.32507317e-13,45.2375996 -1.3500312e-13,39.3628809 L-1.3500312e-13,38.0000938 L37.422,38 Z" id="形状结合" fill="url(#linearGradient-6)"></path>
+                                <rect id="矩形" fill="#FFFFFF" x="15" y="10" width="29" height="5" rx="2.5"></rect>
+                                <rect id="矩形备份-2" fill="#FFFFFF" x="15" y="23" width="29" height="5" rx="2.5"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
